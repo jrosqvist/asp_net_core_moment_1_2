@@ -1,0 +1,60 @@
+﻿@{
+    var date = DateTime.Now;
+    var year = date.Year;
+    var month = date.Month.ToString("00");
+    var day = date.Day.ToString("00");
+}
+
+<!DOCTYPE html>
+
+<html lang="sv-se">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand%7CPaytone+One%7CUbuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <div id="mobile-menu-container" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMobileMenu()">&times;</a>
+        <a href="/">Startsidan</a>
+        <a href="/Razor">Razor</a>
+        <a href="/About">Om sidan</a>
+    </div>
+    <div id="container">
+        <header class="main-header">
+            <h1 id="logo">Moment 1.2</h1>
+            <div id="mobile-menu-button" onclick="openMobileMenu()">
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+            </div>
+
+        </header>
+        <div id="date-div"> <p>Dagens datum: @year - @month - @day </p></div>
+        <div class="content">
+            <nav class="main-menu">
+                <ul>
+                    <li> <a href="/">Startsidan</a></li>
+                    <li><a href="/Razor">Razor</a></li>
+                    <li><a href="/About">Om sidan</a></li>
+                </ul>
+            </nav>
+
+            <div class="main-section">
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>
+                Av: Joakim Rosqvist -
+                Kontakta mig via e-post -->
+                <a href="mailto:joro1803@student.miun.se"> Här</a>
+            </p>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

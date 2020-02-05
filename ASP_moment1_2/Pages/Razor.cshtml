@@ -1,0 +1,57 @@
+﻿@page
+@{
+    // Sidtitel
+    ViewData["Title"] = "Razor";
+
+    // Datum
+    var date = DateTime.Now;
+    var year = date.Year;
+    var month = date.Month.ToString("00");
+    var day = date.Day.ToString("00");
+    var hour = date.Hour.ToString("00");
+    var minute = date.Minute.ToString("00");
+    var second = date.Second.ToString("00");
+
+    // Är det måndag?
+    var isMonday = date.DayOfWeek.ToString();
+
+    // Kurslista
+    List<String> courseList = new List<String>();
+    courseList.Add("DT057G, Webbutveckling I");
+    courseList.Add("DT084G,	Introduktion till programmering i JavaScript");
+    courseList.Add("DT163G,	Digital bildbehandling för webb");
+    courseList.Add("GD008G,	Typografi och form för webb");
+    courseList.Add("DT093G,	Webbutveckling II");
+    courseList.Add("DT003G,	Databaser");
+    courseList.Add("DT068G,	Webbanvändbarhet");
+    courseList.Add("DT152G,	Webbdesign för CMS");
+    courseList.Add("DT173G,	Webbutveckling III");
+    courseList.Add("IK060G,	Projektledning");
+    courseList.Add("DT162G, JavaScriptbaserad webbutveckling");
+    courseList.Add("DT071G, Programmering i C#.NET");
+}
+
+<h2> Razor-sidan </h2>
+<p>Det här är undersidan för Razor</p>
+
+<p><span class="fat">Datum/klockslag: </span> @year-@month-@day - @hour:@minute:@second</p>
+
+@if (isMonday == "Monday")
+{
+    <p>Det är måndag idag</p>
+}
+else
+{
+    <p>Det är inte måndag idag</p>
+
+}
+
+<div id="course-container">
+    <h4>Kurser jag läst</h4>
+    <ul>
+        @foreach (var course in courseList)
+        {
+            <li><p>@course</p></li>
+        }
+    </ul>
+</div>

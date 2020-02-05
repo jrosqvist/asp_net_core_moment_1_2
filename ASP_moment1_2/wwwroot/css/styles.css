@@ -1,0 +1,257 @@
+﻿
+/* Hela sidan */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    color: #333745;
+    font-size: 62.5%;
+    line-height: 150%;
+}
+/* Text */
+p, span {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
+}
+
+a {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.6rem;
+    color: #FE5F55;
+    letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Paytone One', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+}
+
+h3 {
+    font-size: 2.2rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+.fat {
+    font-weight: bold;
+}
+
+/* Sidinnehåll */
+body {
+    background-color: white;
+}
+
+.content {
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Header */
+.main-header {
+    background-color: #333745;
+    min-height: 50px;
+}
+
+#logo {
+    padding-left: 20px;
+    line-height: 50px;
+    letter-spacing: 0.5px;
+    font-family: 'Gochi Hand', cursive;
+    font-weight: bold;
+    font-size: 2.4rem;
+    float: left;
+    color: white;
+}
+
+#mobile-menu-button {
+    display: none;
+}
+/* Tar bort float */
+.main-header:after {
+    clear: both;
+    display: block;
+    content: "";
+}
+
+/* Datum-diven */
+#date-div {
+    height: 25px;
+    width: 100%;
+    background-color: #EEF5DB;
+    text-align: right;
+}
+
+    #date-div p {
+        margin-right: 20px;
+        line-height: 25px;
+        font-size: 1.4rem;
+        font-style: italic;
+    }
+
+/* Huvudmenyn */
+.main-menu {
+    float: left;
+    width: 25%;
+    margin: 1%;
+    margin-top: 5%;
+    padding: 1.5%;
+    background-color: white;
+    min-height: 400px;
+    text-align: center;
+}
+
+    .main-menu ul li {
+        list-style-type: none;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    }
+
+        .main-menu ul li a {
+            text-decoration: none;
+            color: #FE5F55;
+        }
+
+            .main-menu ul li a:hover {
+                font-size: 1.7rem;
+            }
+
+/* Sektion för sidinnehållet */
+.main-section {
+    float: left;
+    width: 50%;
+    margin: 1%;
+    padding: 5% 9%;
+    background-color: white;
+    min-height: 400px;
+}
+
+    .main-section p {
+        margin-bottom: 10px;
+    }
+
+/* Tar bort float*/
+.content:after {
+    clear: both;
+    display: block;
+    content: "";
+}
+
+/* Sidfoten */
+footer {
+    width: 100%;
+    background-color: #EEF5DB;
+    text-align: center;
+    min-height: 75px;
+}
+
+    footer p {
+        line-height: 75px;
+        font-size: 1.4rem;
+    }
+
+    footer a {
+        color: #FE5F55;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            font-size: 1.7rem;
+        }
+
+/* Kurslistan*/
+#course-container {
+    margin-top: 25px;
+}
+
+    #course-container ul {
+        padding-left: 50px;
+    }
+
+/* Mobilmenyn */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    background-color: #333745;
+}
+
+    .sidenav a {
+        color: white;
+        text-align: center;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 1.6rem;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .sidenav a:hover {
+            color: #FE5F55;
+        }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 3rem;
+        margin-left: 50px;
+        color: #FE5F55;
+    }
+
+        .sidenav .closebtn:hover {
+            font-size: 3.2rem;
+        }
+
+
+/* Media-queries*/
+@media (max-width:900px) {
+    /* Döljer vanliga menyn */
+    .main-menu {
+        display: none;
+    }
+    /* Visar mobilmenyknappen */
+    #mobile-menu-button {
+        display: block;
+        float: right;
+        margin-top: 17.5px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+        #mobile-menu-button span {
+            display: block;
+            height: 3px;
+            width: 20px;
+            margin: 0;
+            margin-bottom: 2px;
+            background-color: white;
+        }
+
+    .main-section {
+        width: 80%;
+        margin: 2.5%;
+        padding: 2.5% 7.5%;
+    }
+}
